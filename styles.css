@@ -59,10 +59,16 @@ nav{
     margin: 0 auto;
     height: 64px;
     padding: 2% 10%;
-    background-color: var(--ivory-black);
+    background-color: #1D2731;
+    box-shadow: 1px 1px 0.5rem #D9B310;
     align-items: center;
     position: fixed;
     z-index: 1;
+}
+    /* Nav Effect Scrolling */
+.scrolling-active{
+    background-color: #0B3C5D;
+    box-shadow: 1px 1px 0.15rem #D9B310;
 }
 
 nav a{
@@ -440,4 +446,88 @@ main img{
     font-family: 'Arvo', serif;
 }
 
+/* Contact Section */
+.contact{
+    height: 30vh;
+    width: 100%;
+    text-align: center;
+}
 
+.contact h2{
+    color: #D9B310;
+    margin-bottom: 5vh;
+    font-size: 3rem;
+}
+
+
+#paragraph-contact{
+    margin: 0 20%;
+    font-size: 1.2rem;
+    margin-bottom: 5vh;
+}
+
+.logos-contact img{
+    display: inline-flex;
+    width: 10vh;
+    margin: 0 7vh;
+    margin-bottom: 10vh;
+    animation: logoanim 4s infinite;
+}
+
+.logos-contact img:hover{
+    box-shadow: -4px 2px #1D2731;
+    transform: scale(1.1);
+}
+
+@keyframes logoanim{
+    0%{
+        border: 1px solid var(--gold-leaf);
+        border-radius: 5px;
+    }
+    50%{
+        border: 1px solid var(--prussian-blue);
+        border-radius: 15px;
+    }
+    100%{
+        border: 1px solid var(--gold-leaf);
+        border-radius: 5px;
+    }
+}
+
+
+/* Responsive Design Cellphone */
+@media (max-width: 767px) {
+    *{
+        transition: none !important;
+        animation: none !important;
+    }
+
+    nav{
+        font-size: 10px;
+    }
+    .image-me{
+        display: none;
+    }
+
+    .banner{
+        position: relative;
+    }
+
+    .static-text h1{
+        font: 2rem;
+        width: 100%;
+        border: 1px solid red;
+        display: block;
+        position: absolute;
+        margin-top: 5vh;
+        top: 10%;
+    }
+
+    .dynamic-text li{
+        font-size: 2rem;
+        display: block;
+        border: 1px solid green;
+    }
+
+    
+}
