@@ -1,0 +1,443 @@
+/* Universal Styles */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid red; */
+    transition: 0.2s ease-in;
+}
+
+:root{
+    --prussian-blue: #0B3C5D;
+    --sky-blue: #328CC1;
+    --gold-leaf: #D9B310;
+    --ivory-black: #1D2731;
+}
+
+
+h1{
+    font-size: 40px;
+}
+
+h2{
+    font-size: 25px;
+
+}
+
+h1, h2, button, span{
+    font-family: 'Arvo', serif;
+}
+
+h3, p, a, li{
+    font-family: 'Lato', sans-serif;
+    color: var(--ivory-black);
+}
+
+button{
+    color: white;
+    border: 1px solid var(--gold-leaf);
+    background-color: transparent;
+    width: 7rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+button:hover{
+    box-shadow: -4px 2px white;
+    background-color: var(--ivory-black);
+}
+
+
+/* Header */
+    /* Nav */
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    height: 64px;
+    padding: 2% 10%;
+    background-color: var(--ivory-black);
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+}
+
+nav a{
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+nav a:hover{
+    color: #D9B310;
+    text-decoration-line: underline;
+}
+
+nav ul{
+    list-style-type: none;
+    font-size: 1rem;  
+    display: inline;
+    background-color: transparent;
+}
+
+nav li{
+    display: inline; 
+    color: white;
+    background-color: transparent;
+}
+
+    /* Banner */
+main{
+    height: 100vh;
+    width: 100%;
+    padding: 2vh 5vh;
+    position: relative;
+    background-color: #0B3C5D;
+}
+
+/* Typing Effect */
+.typing-effect{
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+}
+
+.typing-effect .static-text{
+    color: white;
+    font-weight: bold;
+}
+
+.typing-effect .dynamic-text{
+    margin-left: 15px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+}
+
+.dynamic-text li{
+    list-style: none;
+    color: #D9B310;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(3) infinite;
+}
+
+@keyframes slide{
+    100%{
+        top: -155px;
+    }
+}
+
+.dynamic-text li span{
+    position: relative;
+}
+
+.dynamic-text li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background: var(--prussian-blue);
+    border-left: 2px solid var(--gold-leaf);
+    animation: typing 2s steps(20) infinite;
+}
+
+@keyframes typing{
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;   
+    }
+}
+
+main h3{
+    color: white;
+    text-align: center;
+    margin: 0 20%;
+}
+
+
+main img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    height: 400px;
+    padding-top: 2vh;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    animation: header-image 5s infinite;
+}
+
+@keyframes header-image{
+    0%{
+        transform: rotate(0deg); 
+        border: 1px solid #D9B310;
+        border-radius: 10px; 
+    }
+    50%{
+        transform: rotate(10deg);
+        border: 1px solid #328CC1;
+        border-radius: 20%;
+        shape-image-threshold: var(--gold-leaf);
+    }
+
+    75%{
+        border: 1px solid var(--ivory-black);
+    }
+
+    100%{
+        transform: rotate(0deg);
+        border: 1px solid #D9B310;
+        border-radius: 10px;
+    }
+}
+
+/* http://mattfarley.ca - Cool Website for source*/
+/* Floating Icons */
+.floating-icons{
+    position: fixed;
+    top: 40%;
+    transform: translate(-10%);
+    border: 1px solid #D9B310;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.floating-icons img{
+    height: 7vh;
+    display: block;
+    margin: 10px 0;
+}
+
+.floating-icons img:hover{
+    transform: scale(1.2);
+}
+
+/* About Me/Skills */
+.about-me{
+    margin: 10vh 10vh;
+    text-align: center;
+}
+
+.about-me h2{
+    color: #D9B310;
+    margin-bottom: 5vh;
+}
+
+.about-me h2{
+    color: #1D2731;
+    margin-bottom: 5vh;
+    animation: titleanim ease-in 7s infinite;
+}
+
+@keyframes titleanim{
+    50%{
+        color: #D9B310;
+    }
+}
+
+#paragraph-about-me{
+    margin: 0 20%;
+    font-size: 1.2rem;
+    margin-bottom: 5vh;
+}
+
+.containers-about-me{
+    width: 100%;
+    display: flex;
+    border: 1px solid var(--gold-leaf);
+    border-radius: 5px;
+    justify-content: space-between;
+    padding: 2vh 2vh;
+}
+
+.containers-about-me h3{
+    color: #0B3C5D;
+}
+
+
+.containers-about-me li{
+    list-style-type: none;
+    padding: 5px 10px;
+}
+
+.containers-about-me li:hover{
+    transition: 0.4s;
+    border: 1px solid #D9B310;
+    box-shadow: -5px 5px var(--prussian-blue);
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.containers-about-me p{
+    margin: 2vh 5vh;
+    border-bottom: 1px solid var(--gold-leaf);
+    font-weight: bold;
+}
+
+.about-me img{
+    height: 15vh;
+    border: 1px solid var(--prussian-blue);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 2vh;
+}
+
+.about-me img:hover{
+    border: 1px solid var(--gold-leaf);
+    box-shadow: -5px 5px var(--prussian-blue);
+}
+
+.container-one, 
+.container-two,
+.container-three {
+    border-right: 1px solid var(--gold-leaf);
+}
+
+/* Projects */
+.projects-area h2{
+    color: #D9B310;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+.container-projects{
+    display: flex;
+    margin: 5vh 10vh;
+}
+
+.projects-area img{
+    width: 100%;
+    border: solid 1px var(--gold-leaf);
+    border-radius: 5px;
+}
+
+.front-end{
+    position: relative;
+}
+
+.design{
+    position: relative;
+}
+
+.coding-challenges{
+    position: relative;
+}
+
+.image-overlay-front{
+    position: absolute;
+    padding: 0 2vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    border-radius: 5px;
+    background-color: #D9B310;
+}
+
+.image-overlay-front > * {
+    transform: translateY(100px);
+    transform: transform 1s;
+}
+
+.image-overlay-front:hover{
+    opacity: 1;
+    transition: 1s;
+}
+
+.image-overlay-front:hover > *{
+    transform: translateY(0);
+}
+
+.image-overlay-front h3{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Arvo', serif;
+}
+
+.image-overlay-design{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    border-radius: 5px;
+    background-color: #D9B310;
+}
+
+.image-overlay-design > * {
+    transform: translateY(20px);
+    transform: transform 1s;
+}
+
+.image-overlay-design:hover{
+    opacity: 1;
+    transition: 1s;
+}
+
+.image-overlay-design:hover > *{
+    transform: translateY(0);
+}
+
+.image-overlay-design h3{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Arvo', serif;
+}
+
+
+.image-overlay-code{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    border-radius: 5px;
+    background-color: #D9B310;
+}
+
+.image-overlay-code > * {
+    transform: translateY(50px);
+    transform: transform 1s;
+}
+
+.image-overlay-code:hover{
+    opacity: 1;
+    transition: 1s;
+}
+
+.image-overlay-code:hover > *{
+    transform: translateY(0);
+}
+
+.image-overlay-code h3{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Arvo', serif;
+}
+
+
