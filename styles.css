@@ -42,6 +42,7 @@ button{
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover{
@@ -54,16 +55,32 @@ button:hover{
     /* Nav */
 nav{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
     height: 64px;
-    padding: 2% 10%;
+    padding: 2vh 10vh;
     background-color: #1D2731;
     box-shadow: 1px 1px 0.5rem #D9B310;
     align-items: center;
     position: fixed;
     z-index: 1;
+}
+
+.hamburger{
+    display: none;
+}
+
+#hamburger{
+    border: none;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.hamburger img{
+    height: 50px;
 }
     /* Nav Effect Scrolling */
 .scrolling-active{
@@ -169,7 +186,6 @@ main h3{
     text-align: center;
     margin: 0 20%;
 }
-
 
 main img{
     display: block;
@@ -420,6 +436,7 @@ main img{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     opacity: 0;
     border-radius: 5px;
     background-color: #D9B310;
@@ -496,38 +513,158 @@ main img{
 
 
 /* Responsive Design Cellphone */
-@media (max-width: 767px) {
-    *{
-        transition: none !important;
-        animation: none !important;
+@media (max-width: 820px) {
+    /* Universal Styles */
+    p{
+        font-size: 16px !important;
     }
 
+    /* Nav styles */
     nav{
-        font-size: 10px;
+        font-size: 16px;
     }
-    .image-me{
+
+    nav button {
         display: none;
     }
 
+    .nav-ul{
+        display: none;
+        width: 100%;
+    }
+
+    .nav-ul.show{
+        display: flex;
+    }
+
+    .hamburger{
+        display: block;
+        margin-bottom: 20px;
+        margin-right: 10vh !important;
+        position: absolute;
+        width: 10px;
+        left: 2vh;
+    }
+
+    /* Banner */
     .banner{
+        animation: none;
+        justify-content: center;
+        align-content: center;
+        max-height: 100vh;
+    }
+
+   .typing-effect{
+        display: block;
         position: relative;
     }
 
+    .image-me img{
+        animation: none !important;
+        transition: none !important;
+        height: 25vh;
+        display: block;
+     }
+
     .static-text h1{
         font: 2rem;
-        width: 100%;
-        border: 1px solid red;
-        display: block;
+        margin-top: 10vh;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .dynamic-text{
         position: absolute;
-        margin-top: 5vh;
-        top: 10%;
+        width: 100%;
+        top: 40%;
+        justify-content: center;
     }
 
     .dynamic-text li{
-        font-size: 2rem;
-        display: block;
-        border: 1px solid green;
+        font-size: 1.5rem;
+        text-align: center;
+        animation: none;
     }
 
+    .typing-effect .dynamic-text{
+        overflow: visible;
+        display: block;
+        animation: none;
+    }
+
+    .dynamic-text li span::after{
+        background-color: transparent;
+        animation: none;
+        border-left: none;
+    }
+
+    .banner h3{
+        position: absolute;
+        top: 70%;
+    }
+
+
+    /* About Me */
+    .about-me h2{
+        color: #D9B310;
+    }
+
+    #paragraph-about-me{
+        margin: 5vh 1vh;
+    }
+
+    .containers-about-me{
+        display: block;
+        margin: 0 1vh !important;
+    }
+
+    .containers-about-me div{
+        margin-bottom: 5vh;
+
+    }
+
+    .containers-about-me img{
+        height: 10vh;
+    }
+
+    .container-one, 
+    .container-two,
+    .container-three {
+    border-right: none;
+    }
     
+    /* Projects */
+    .projects-area h2{
+        margin: 0 10vh;
+    }
+
+    .projects-area div{
+        display: block;
+        margin-bottom: 2vh;
+    } 
+
+    .image-overlay-front{
+        background-color: transparent;
+        opacity: 1;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-overlay-design{
+        background-color: transparent;
+        opacity: 1;
+        display: block;
+        text-align: center;
+        top: 30%;
+    }
+
+    .image-overlay-code{
+        background-color: transparent;
+        opacity: 1;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        top: 15%;
+    }
 }
