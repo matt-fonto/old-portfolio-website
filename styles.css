@@ -37,12 +37,13 @@ button{
     color: white;
     border: 1px solid var(--gold-leaf);
     background-color: transparent;
-    width: 7rem;
-    height: 2rem;
+    width: 10rem;
+    height: 3rem;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 button:hover{
@@ -59,7 +60,7 @@ nav{
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
-    height: 64px;
+    height: 10vh;
     padding: 2vh 10vh;
     background-color: #1D2731;
     box-shadow: 1px 1px 0.5rem #D9B310;
@@ -120,6 +121,15 @@ main{
     padding: 2vh 5vh;
     position: relative;
     background-color: #0B3C5D;
+}
+
+.static-text{
+    display: block;
+}
+
+#sub-head-banner{
+    font-family: 'Arvo', serif;
+    display: none;
 }
 
 /* Typing Effect */
@@ -203,23 +213,18 @@ main img{
     0%{
         transform: rotate(0deg); 
         border: 1px solid #D9B310;
-        border-radius: 10px; 
+        border-radius: 50%; 
     }
     50%{
         transform: rotate(10deg);
         border: 1px solid #328CC1;
-        border-radius: 20%;
-        shape-image-threshold: var(--gold-leaf);
-    }
-
-    75%{
-        border: 1px solid var(--ivory-black);
+        border-radius: 45%; 
     }
 
     100%{
         transform: rotate(0deg);
         border: 1px solid #D9B310;
-        border-radius: 10px;
+        border-radius: 50%;
     }
 }
 
@@ -554,53 +559,37 @@ main img{
         max-height: 100vh;
     }
 
-   .typing-effect{
+    .static-text h1{
+        text-align: center;
+        margin-top: 3vh;
+    }
+
+    .static-text #sub-head-banner{
         display: block;
-        position: relative;
+        color: #D9B310 !important;
+    }
+    .image-me{
+        margin: 10px 5px;
+        display: flex;
+        justify-content: center;
     }
 
     .image-me img{
         animation: none !important;
         transition: none !important;
-        height: 25vh;
-        display: block;
+        height: 40vh;
+        margin: 10px 5px;
+        justify-content: center;
      }
 
-    .static-text h1{
-        font: 2rem;
-        margin-top: 10vh;
-        text-align: center;
-        justify-content: center;
-    }
 
     .dynamic-text{
-        position: absolute;
-        width: 100%;
-        top: 40%;
-        justify-content: center;
-    }
-
-    .dynamic-text li{
-        font-size: 1.5rem;
-        text-align: center;
-        animation: none;
-    }
-
-    .typing-effect .dynamic-text{
-        overflow: visible;
-        display: block;
-        animation: none;
-    }
-
-    .dynamic-text li span::after{
-        background-color: transparent;
-        animation: none;
-        border-left: none;
+        display: none;
     }
 
     .banner h3{
-        position: absolute;
-        top: 70%;
+        text-align: center;
+        margin-top: 5vh;
     }
 
 
@@ -637,34 +626,47 @@ main img{
     .projects-area h2{
         margin: 0 10vh;
     }
+    
+    .container-projects{
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
 
-    .projects-area div{
-        display: block;
-        margin-bottom: 2vh;
-    } 
+    }
+
+
+    .container-projects div{
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    .container-projects h3{
+        font-size: 0.75rem;
+        align-items: center;
+
+        border-radius: 5px;
+        width: 100%;
+        transform: none !important;
+        
+    }
 
     .image-overlay-front{
         background-color: transparent;
         opacity: 1;
-        justify-content: center;
-        align-items: center;
         text-align: center;
+        padding: 0 0;
     }
 
+    
     .image-overlay-design{
         background-color: transparent;
         opacity: 1;
-        display: block;
         text-align: center;
-        top: 30%;
     }
 
     .image-overlay-code{
         background-color: transparent;
         opacity: 1;
-        justify-content: center;
-        align-items: center;
         text-align: center;
-        top: 15%;
     }
 }
